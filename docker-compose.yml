@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    image: web-tugas-101012300227:1.0
+    ports:
+      - "8080:8000"
+    environment:
+      - STUDENT_NIM=101012300227
+    depends_on:
+      - cache
+
+  cache:
+    image: redis:alpine
